@@ -6,6 +6,7 @@ import lt.debarz.springandreactapp.repositories.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class UserService {
 
@@ -19,6 +20,8 @@ public class UserService {
     }
 
     public User save(User user){
+        user.setUsername(user.getUsername());
+        user.setDisplayName(user.getDisplayName());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }

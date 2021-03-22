@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByUserName(String userName);
+    //Springas pavercia si metada JPA query , key yra "findBY", o username tai objektas kurio iesko
+    User findByUsername(String username);
 }
