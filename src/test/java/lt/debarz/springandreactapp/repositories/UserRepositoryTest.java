@@ -1,5 +1,6 @@
 package lt.debarz.springandreactapp.repositories;
 
+import lt.debarz.springandreactapp.controllers.TestUtils;
 import lt.debarz.springandreactapp.model.User;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -24,18 +25,14 @@ class UserRepositoryTest {
 
     @Test
     public void findByUserName_whenUserExists_returnUser() {
-        User user = new User();
-        user.setUsername("test");
-        user.setDisplayName("test");
-        user.setPassword("test1T123");
-
-        testEntityManager.persist(user);
+        testEntityManager.persist(TestUtils.createValidUser());
 
         User inDB = userRepository.findByUsername("test");
         assertThat(inDB).isNotNull();
     }
+
     @Test
-    public void findByUserName_whenUserDoesNotExists_returnUser(){
+    public void findByUserName_whenUserDoesNotExists_returnUser() {
         User user = new User();
         user.setUsername("test");
         user.setDisplayName("test");
