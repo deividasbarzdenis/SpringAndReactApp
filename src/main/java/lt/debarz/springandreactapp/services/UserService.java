@@ -4,7 +4,6 @@ package lt.debarz.springandreactapp.services;
 import lt.debarz.springandreactapp.execeptions.DuplicatedUsernameException;
 import lt.debarz.springandreactapp.model.User;
 import lt.debarz.springandreactapp.repositories.UserRepository;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

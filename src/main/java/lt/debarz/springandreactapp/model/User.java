@@ -20,7 +20,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue //default AUTO
-    private Long id;
+    private Integer id;
 
     @NotNull( message = "stringValue has to be present")
     @Size(min = 4, max = 255)
